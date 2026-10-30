@@ -1,0 +1,6 @@
+results/*
+!results/summary.md
+!results/summary.csv
+__pycache__/
+*.pyc
+scripts/_run.mos

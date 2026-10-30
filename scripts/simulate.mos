@@ -1,0 +1,9 @@
+// Run from the repository root:  omc scripts/simulate.mos
+// Needs Modelica 4.1.0 and Buildings 14.0.0 (OMEdit: File > Manage Libraries > Install Library).
+loadModel(Modelica, {"4.1.0"}); getErrorString();
+loadModel(Buildings, {"14.0.0"}); getErrorString();
+loadFile("ChillerCDULoop/package.mo"); getErrorString();
+mkdir("results");
+cd("results");
+simulate(ChillerCDULoop.Examples.Baseline, stopTime=172800, numberOfIntervals=2880, tolerance=1e-6); getErrorString();
+simulate(ChillerCDULoop.Examples.SupplyReset, stopTime=172800, numberOfIntervals=2880, tolerance=1e-6); getErrorString();
